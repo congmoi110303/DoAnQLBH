@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Statistical.dart';
+import 'package:myapp/PersonalInfo.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       body:SingleChildScrollView(
       child: Column(children: [
-          Statistical(),
+          PersonalInfo(),Statistical(),
       ]),
       ),
       
