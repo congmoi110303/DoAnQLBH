@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:myapp/Statistical.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+
       appBar: AppBar(backgroundColor: Colors.blue,
       elevation: 0,
       title: Text("TopZone"),
@@ -28,6 +29,28 @@ class MyApp extends StatelessWidget {
 
       ],
       ),
+      body:SingleChildScrollView(
+      child: Column(children: [
+          Statistical(),
+      ]),
+      ),
+      
+
+      bottomNavigationBar: BottomNavigationBar(
+      currentIndex: 0,
+      fixedColor: Color.fromARGB(255, 7, 121, 236),
+      items: const [
+      BottomNavigationBarItem(
+      label: "Trang chủ",
+      icon: Icon(Icons.home),
+      ),
+      BottomNavigationBarItem(
+      label: "Tài khoản",
+      icon: Icon(Icons.account_circle),
+      ),
+      ],
+      onTap: (int indexOfItem) {} ),
+
 
       drawer: Drawer( 
       child: ListView( 
@@ -38,6 +61,7 @@ class MyApp extends StatelessWidget {
       ), 
       child: Text( 
       'Menu', 
+      textAlign: TextAlign.center,
       style: TextStyle( 
       color: Colors.black, 
       fontSize: 24, 
@@ -45,13 +69,13 @@ class MyApp extends StatelessWidget {
       ), 
       ), 
       ListTile( 
-      leading: Icon(Icons.people), 
-      title: Text('Thông tin cá nhân'), 
+      leading: Icon(Icons.info_outline), 
+      title: Text('Giới thiệu TopZone'), 
       ), 
       ListTile( 
-      leading: Icon(Icons.password), 
+      leading: Icon(Icons.details), 
       //trailing: Icon(Icons.check),
-      title: Text('Đổi mật khẩu'), 
+      title: Text('Tiêu chuẩn cộng đồng'), 
       ), 
       ListTile( 
       leading: Icon(Icons.exit_to_app), 
@@ -60,6 +84,7 @@ class MyApp extends StatelessWidget {
       ], 
       ), 
       ),
+
       ),
     );
   }
